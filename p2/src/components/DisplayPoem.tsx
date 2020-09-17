@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react';
 
 function DisplayPoem() {
-  const [state, setState] = useState()
-  const [select, selectState] = useState(0)
+  const [listState, setListState] = useState()
+  const [poemIndex, selectPoemIndex] = useState(0)
 
     useEffect( () => {
     fetch('https://poetrydb.org/linecount/10')
       .then(res => res.json())
       .then((data) =>
-          (setState(data),
+          (setListState(data),
           console.log(data))
       )
     }, []
@@ -16,8 +16,8 @@ function DisplayPoem() {
 
 
    const handleClick = () => {
-       const randomNumb = Math.floor(Math.random()*state.length)
-       selectState(randomNumb);
+       const randomNumb = Math.floor(Math.random()*listState.length)
+       selectPoemIndex(randomNumb);
        console.log(randomNumb)
   }
 
@@ -25,7 +25,7 @@ function DisplayPoem() {
 
   return (
     <div>
-    { !state ?
+    { !listState ?
       ( <div> loading... </div> ) :
       (
         <div className="content">
@@ -35,13 +35,14 @@ function DisplayPoem() {
 
 
 
-        <p className="poem_header">  Author: {state[select].author} </p>
-        <p className="poem_header">  Title: {state[select].title} </p>
-          {state[select].lines.map((item:any) => {
+        <p className="poem_header">  Author: {listState[poemIndex].author} </p>
+        <p className="poem_header">  Title: {listState[poemIndex].title} </p>
+          {listState[poemIndex].lines.map((item:any) => {
            return <p> {item } </p> })}
         </div>
       )}
     </div>
 )
+
 }
 export {DisplayPoem} ;
