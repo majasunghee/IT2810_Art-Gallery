@@ -1,8 +1,18 @@
 import React from 'react';
-//import img from './images/hotAirBalloonSVG.svg'
-
+import balloon from '../images/hotAirBalloonSVG.svg'
+import seaplane from '../images/seaplaneSVG.svg'
+import rocket from '../images/RocketSVG.svg'
 function DisplayImage(){
-  return<img src={process.env.PUBLIC_URL + '/images/hotAirBalloonSVG.svg'}  alt="svg" />
+
+
+
+  return(
+     <div>
+         <img src={balloon}/>
+         <img src={seaplane}/>
+         <img src={rocket}/>
+     </div>
+  )
 
 }
 
