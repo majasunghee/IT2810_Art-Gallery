@@ -6,22 +6,21 @@ import rocket from '../images/RocketSVG.svg'
 
 function DisplayImage(){
 
-   const [imageArray] = useState([balloon, seaplane, rocket])
-   const [image, getImage] = useState(imageArray[0])
+   const [image, getImage] = useState(seaplane)
 
    const handleChange = (e: any) => {
-      getImage(imageArray[e.target.value])
+      getImage(e.target.value)
    console.log(e.target.value)
   }
 
   return(
      <div>
         <select name="test" onChange = {handleChange}  >
-         <img src={"../images/hotAirBalloon_logo.svg"} width="20" height="15"/>
+         <img src={"../images/hotAirBalloon_logo.svg"} width="20" height="15" />
            <option> </option>
-           <option value={0}>  balloon </option>
-           <option value={1}> seaplane </option>
-           <option value={2}> rocket </option>
+           <option value={balloon}>  balloon </option>
+           <option value={seaplane}> seaplane </option>
+           <option value={rocket}> rocket </option>
          </select>
 
          <img src={image}/>
