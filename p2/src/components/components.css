@@ -1,0 +1,73 @@
+
+.content{
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  border: 5px solid white;
+  width: 400px;
+}
+
+.content > p{
+  margin: 0;
+}
+
+.poem_title, .poem_author{
+  font-weight: bold;
+  font-variant: small-caps;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.poem_title{
+  font-size: 24px;
+}
+.poem_author{
+  font-size: 14px;
+  text-align: right;
+}
+
+
+#image_container{
+  display: block;
+  margin: 50px auto;
+  width: 60%;
+}
+
+.drop_down, .drop_down > option {
+  margin: 0 10px;
+  border: solid 2px;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  font-family: courier;
+  font-weight: bold;
+  font-variant: small-caps;
+  padding: 10px;
+  width: 6em;
+}
+
+button{
+  display: block;
+  font-size: 24px;
+  font-family: courier;
+  font-weight: bold;
+  font-variant: small-caps;
+  margin: 20px auto;
+  width: 130px;
+  height: 46px;
+  border: solid 2px white;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  background: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+}
+
+button:hover{
+  border: solid 2px white;
+  background: white;
+  color: black;
+}
