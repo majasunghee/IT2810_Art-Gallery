@@ -3,16 +3,15 @@ import './App.css';
 import {DisplayPoem} from "./components/DisplayPoem";
 import {DisplayImage} from "./components/DisplayImage";
 import {DisplayAudio} from "./components/DisplayAudio";
-import {ThemeContextProvider} from "./contexts/ThemeContext";
+import {SaveFavorite} from "./components/SaveFavorite";
 
 function App() {
   return (
-    <div >
-      <ThemeContextProvider>
-          <DisplayPoem/>
-          <DisplayImage/>
-          <DisplayAudio/>
-      </ThemeContextProvider>
+    <div id="utstilling" >
+      <h1> Interaktiv Utstilling - gruppe 40</h1>
+      <DisplayAudio/>
+      <DisplayImage/>
+      <DisplayPoem/>
     </div>
   );
 }

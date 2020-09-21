@@ -1,48 +1,40 @@
 import React, {useState, useEffect} from 'react';
+import './components.css'
+import {useLocalStorage} from "../hooks/useLocalStorage"
 
 function DisplayPoem() {
   const [listState, setListState] = useState()
-  const [poemIndex, selectPoemIndex] = useState(0)
+  const [poem, getPoem] = useLocalStorage("poem", null)
 
-    useEffect( () => {
-    fetch('https://poetrydb.org/linecount/10')
-      .then(res => res.json())
-      .then((data) =>
-          (setListState(data),
-          console.log(data))
-      )
-    }, []
-  )
-
+  useEffect( () => {
+    const result = fetch('https://poetrydb.org/linecount/10')
+     .then(res => res.json())
+     .then((data: any) =>{
+        setListState(data);
+     })
+   }, []
+   )
 
    const handleClick = () => {
        const randomNumb = Math.floor(Math.random()*listState.length)
-       selectPoemIndex(randomNumb);
-       console.log(randomNumb)
-  }
-
-
+       getPoem(listState[randomNumb]);
+     }
 
   return (
     <div>
-    { !listState ?
+      <button onClick = {handleClick} > generate poem </button>
+    { !poem ?
       ( <div> loading... </div> ) :
       (
         <div className="content">
+        <p className="poem_title"> {poem.title} </p>
+          {poem.lines.map((item : any, index:any) => {
+           return <p key={index}> {item } </p> })}
+        <p className="poem_author"> {poem.author} </p>
 
-
-          <button onClick = {handleClick} > Get random Poem </button>
-
-
-
-        <p className="poem_header">  Author: {listState[poemIndex].author} </p>
-        <p className="poem_header">  Title: {listState[poemIndex].title} </p>
-          {listState[poemIndex].lines.map((item:any) => {
-           return <p> {item } </p> })}
         </div>
       )}
     </div>
 )
-
 }
 export {DisplayPoem} ;
