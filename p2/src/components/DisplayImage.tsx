@@ -1,31 +1,30 @@
-import React, {useState} from 'react';
+import React from 'react';
+import './components.css'
+import {useLocalStorage} from "../hooks/useLocalStorage"
 import balloon from '../images/hotAirBalloonSVG.svg'
 import seaplane from '../images/seaplaneSVG.svg'
 import rocket from '../images/RocketSVG.svg'
-
+import black from '../images/black.svg'
 
 function DisplayImage(){
 
-   const [image, getImage] = useState(seaplane)
+   const [image, setImage] = useLocalStorage('image', seaplane);
 
    const handleChange = (e: any) => {
-      getImage(e.target.value)
-   console.log(e.target.value)
+      setImage(e.target.value)
   }
 
   return(
-     <div>
-        <select name="test" onChange = {handleChange}  >
-         <img src={"../images/hotAirBalloon_logo.svg"} width="20" height="15" />
-           <option> </option>
+     <>
+        <select className="drop_down" onChange = {handleChange}>
+           <option id="void_image" value={black} > images </option>
            <option value={balloon}>  balloon </option>
            <option value={seaplane}> seaplane </option>
            <option value={rocket}> rocket </option>
          </select>
 
-         <img src={image}/>
-
-     </div>
+         <img id="image_container" src={image} alt="animated landscape"/>
+     </>
   )
 
 }
