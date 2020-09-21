@@ -3,40 +3,45 @@ import './components.css'
 import {useLocalStorage} from "../hooks/useLocalStorage"
 
 function DisplayPoem() {
-  const [listState, setListState] = useState()
+  const [listState, setListState] = useLocalStorage("poem2", null)
   const [poemIndex, selectPoemIndex] = useState(0)
-  const [poem, getPoem] = useState()
+  const [poem, getPoem] = useLocalStorage("poem", null)
 
   useEffect( () => {
    fetch('https://poetrydb.org/linecount/10')
      .then(res => res.json())
-     .then((data) =>
-         (setListState(data),
-         getPoem(data[poemIndex])
-        )
-     )
+     .then((data) =>{
+         setListState(JSON.stringify(data));
+         getPoem(JSON.stringify(data[poemIndex]));
+         console.log(data[poemIndex]);
+
+     })
    }, []
  )
-  console.log(poem);
+
 
    const handleClick = () => {
-       const randomNumb = Math.floor(Math.random()*listState.length)
+      const parsli = JSON.parse(listState)
+       const randomNumb = Math.floor(Math.random()*20)
        selectPoemIndex(randomNumb);
         getPoem(listState[poemIndex]);
      }
 
+
+     const parsPoem = JSON.parse(poem);
+
   return (
     <div>
       <button onClick = {handleClick} > new poem </button>
-    { !listState ?
+    { !poem ?
       ( <div> loading... </div> ) :
       (
         <div className="content">
 
         <p className="poem_title">  </p>
-          {listState[poemIndex].lines.map((item : any, index:any) => {
+          {parsPoem.lines.map((item : any, index:any) => {
            return <p key={index}> {item } </p> })}
-        <p className="poem_author"> {listState[poemIndex].author} </p>
+        <p className="poem_author"> {parsPoem.author} </p>
 
         </div>
       )}
