@@ -1,11 +1,11 @@
 import {useState} from 'react';
 
 function useLocalStorage(key:any, initialValue:any) {
+  
 
   const [storedValue, setStoredValue] = useState(() => {
-      const item = localStorage.getItem(key);
-      return item ? item : initialValue;
-
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
     });
 
     const setValue = (value:any) => {
@@ -13,12 +13,14 @@ function useLocalStorage(key:any, initialValue:any) {
         const valueToStore =
         value instanceof Function ? value(storedValue) : value;
         setStoredValue(valueToStore);
-        window.localStorage.setItem(key, valueToStore);
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+
       } catch(err) {
       console.error(err);
       }
       }
     return [storedValue, setValue];
+
     }
 
 
