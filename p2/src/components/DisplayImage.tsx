@@ -1,21 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './components.css'
 import {useLocalStorage} from "../hooks/useLocalStorage"
 import balloon from '../images/hotAirBalloonSVG.svg'
 import seaplane from '../images/seaplaneSVG.svg'
 import rocket from '../images/RocketSVG.svg'
 import black from '../images/black.svg'
+import ThemeContext from"../contexts/ThemeContext";
 
 function DisplayImage(){
 
    const [image, setImage] = useLocalStorage('image', seaplane);
+
+   const theme = useContext(ThemeContext);
 
    const handleChange = (e: any) => {
       setImage(e.target.value)
   }
 
   return(
-     <>
+     <div style={theme}>
         <select className="drop_down" onChange = {handleChange}>
            <option id="void_image" value={black} > images </option>
            <option value={balloon}>  balloon </option>
@@ -24,7 +27,7 @@ function DisplayImage(){
          </select>
 
          <img id="image_container" src={image} alt="animated landscape"/>
-     </>
+     </div>
   )
 
 }

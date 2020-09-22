@@ -1,8 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import './components.css'
 import {useLocalStorage} from "../hooks/useLocalStorage"
+import ThemeContext from "../contexts/ThemeContext";
 
 function DisplayPoem() {
+
+  const theme = useContext(ThemeContext);
+
   const [listState, setListState] = useState()
   const [poem, getPoem] = useLocalStorage("poem", null)
 
@@ -21,7 +25,7 @@ function DisplayPoem() {
      }
 
   return (
-    <div>
+    <div style={theme}>
       <button onClick = {handleClick} > generate poem </button>
     { !poem ?
       ( <div> loading... </div> ) :
