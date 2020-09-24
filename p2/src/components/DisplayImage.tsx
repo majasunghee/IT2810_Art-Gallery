@@ -18,16 +18,17 @@ function DisplayImage(){
   }
 
   return(
-     <div style={theme}>
-        <select className="drop_down" onChange = {handleChange}>
+     <>
+         <div className="item_imgSelect" style={theme}>
+           <select className="drop_down" onChange = {handleChange}>
            <option id="void_image" value={black} > images </option>
            <option value={balloon}>  balloon </option>
            <option value={seaplane}> seaplane </option>
            <option value={rocket}> rocket </option>
          </select>
-
-         <img id="image_container" src={image} alt="animated landscape"/>
-     </div>
+         </div>
+         <div className="item_img"><img id="image_container" src={image} alt="animated landscape"/></div>
+     </>
   )
 
 }

@@ -14,17 +14,18 @@ function App() {
 
     const toggleTheme = () =>
         theme ===themes.darkMode ?
-            (setTheme(themes.lightMode), document.body.style.backgroundColor = 'white')
+            (setTheme(themes.lightMode), document.body.style.backgroundColor = '#F4F5F7')
             :(setTheme(themes.darkMode), document.body.style.backgroundColor = 'black');
 
+
   return (
-    <div id="utstilling" >
+    <div className="wrapper" >
     <ThemeContext.Provider value={theme}>
-      <Header/>
-      <button onClick={toggleTheme}>Darkmode/Lightmode</button>
+      <div className="item_header"><Header/></div>
+      <div className="item_themeButton"><button onClick={toggleTheme}>dark/light</button></div>
       <DisplayAudio/>
-      <DisplayImage/>
-      <DisplayPoem/>
+        <DisplayImage/>
+      <div className="item_poem"><DisplayPoem/></div>
     </ThemeContext.Provider>
     </div>
   );

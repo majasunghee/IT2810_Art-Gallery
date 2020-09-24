@@ -26,7 +26,6 @@ function DisplayPoem() {
 
   return (
     <div style={theme}>
-      <button onClick = {handleClick} > generate poem </button>
     { !poem ?
       ( <div> loading... </div> ) :
       (
@@ -38,6 +37,7 @@ function DisplayPoem() {
 
         </div>
       )}
+      <button onClick = {handleClick} > generate poem </button>
     </div>
 )
 }

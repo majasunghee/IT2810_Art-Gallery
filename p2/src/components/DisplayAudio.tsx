@@ -19,16 +19,18 @@ function DisplayAudio(){
 
 return (
 
-    <div style={theme}>
-        <select className="drop_down" onChange={handleChange}>
+    <>
+        <div className="item_audioSelect" style={theme}>
+            <select className="drop_down" onChange={handleChange}>
             <option >sounds</option>
             <option value={audio1}> 1 </option>
             <option value={audio2}> 2 </option>
             <option value={audio3}> 3 </option>
             <option value={audio4}> 4 </option>
         </select>
-        <audio src={audio} controls autoPlay loop/>
-    </div>
+        </div>
+        <div className="item_audio"><audio src={audio} controls autoPlay loop/></div>
+    </>
         )
 }
 export {DisplayAudio};
