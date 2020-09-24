@@ -20,8 +20,12 @@ function DisplayPoem() {
    )
 
    const handleClick = () => {
-       const randomNumb = Math.floor(Math.random()*listState.length)
-       getPoem(listState[randomNumb]);
+       try {
+           const randomNumb = Math.floor(Math.random() * listState.length)
+           getPoem(listState[randomNumb]);
+       }catch (err) {
+           console.error(err);
+       }
      }
 
   return (

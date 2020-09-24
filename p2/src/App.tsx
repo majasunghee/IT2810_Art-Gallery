@@ -14,7 +14,7 @@ function App() {
 
     const toggleTheme = () =>
         theme ===themes.darkMode ?
-            (setTheme(themes.lightMode), document.body.style.backgroundColor = '#F4F5F7')
+            (setTheme(themes.lightMode), document.body.style.backgroundColor = '#DFE0E2')
             :(setTheme(themes.darkMode), document.body.style.backgroundColor = 'black');
 
 

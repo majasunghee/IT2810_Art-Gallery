@@ -1,3 +1,16 @@
+body {
+  background-color: black;
+  align-items: center;
+}
+
+h1{
+  border-bottom: solid 2px;
+  border-color: white;
+  color: white;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
 .wrapper {
   margin: 10px;
   padding: 10px;
@@ -18,7 +31,6 @@
 .item_audio {
   grid-column: 2/6;
   text-align: center;
-
 }
 
 .item_audioSelect {
@@ -45,9 +57,11 @@
 .content{
   text-align: center;
   margin-top: 50px;
-  padding: 20px;
-  border: 5px solid darkgrey;
+  padding: 5px;
+  border: 3px solid darkgrey;
+  font-size: 14px;
 }
+
 .content > p{
   margin: 0;
 }
@@ -77,7 +91,8 @@
   border: solid 2px;
   background-color: black;
   color: #F4F5F7;
-  width: 5em;
+  width: 6em;
+  margin-top: 5px;
   font-size: 24px;
   font-family: courier;
   font-weight: bold;
@@ -86,13 +101,14 @@
 }
 
 button{
+  width: 6em;
+  height: 2em;
   font-size: 24px;
   font-family: courier;
   font-weight: bold;
   font-variant: small-caps;
-  padding: 10px;
+  padding: 5px;
   border: solid 2px #F4F5F7;
-  border-radius: 5px;
   text-align: center;
   color: #F4F5F7;
   background: black;
@@ -104,4 +120,106 @@ button:hover{
   border: solid 2px #F4F5F7;
   background: #F4F5F7;
   color: black;
+}
+
+/*Based on the size of an ipad pro*/
+@media only screen and (max-width: 1024px) and (min-width: 750px) {
+
+  h1 {
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+
+    .item_header {
+    grid-column: 1/9;
+  }
+
+    .item_audio {
+    grid-column: 3/7;
+  }
+
+    .item_img {
+    grid-column: 3/7;
+  }
+
+    .item_poem {
+    grid-column: 3/7;
+  }
+
+}
+
+/*Based on the size of an iphone 6/7/8 Plus*/
+@media only screen and (max-width: 750px) {
+
+  .wrapper {
+    margin: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .item_audio {
+    grid-column: 1/6;
+    grid-row: 4/4;
+  }
+
+  .item_audioSelect {
+    grid-column: 3/3;
+  }
+
+
+  .item_imgSelect {
+    grid-column: 2/2;
+    grid-row: 2/2;
+  }
+
+  .item_themeButton {
+    grid-column: 1/2;
+    text-align: end;
+    margin-top: 1px;
+  }
+
+  .item_img {
+    grid-column: 1/6;
+  }
+
+  .item_poem {
+    grid-column: 2/5;
+  }
+
+  h1 {
+      font-size: 18px;
+      padding-bottom: 5px;
+    }
+
+  .drop_down, .drop_down > option {
+    margin-top: 5px;
+    font-size: 12px;
+    padding: 2px;
+  }
+
+  button{
+    width: 6em;
+    padding: 2px;
+    font-size: 12px;
+    box-shadow: none;
+  }
+
+  .content{
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .poem_title, .poem_author{
+    padding-bottom: 5px;
+  }
+
+  .poem_title{
+    font-size: 16px;
+  }
+  .poem_author{
+    font-size: 10px;
+  }
+
 }

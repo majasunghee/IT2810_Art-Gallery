@@ -14,7 +14,7 @@ export const themes = {
     },
     lightMode: {
         color: "black",
-        backgroundColor: "#F4F5F7",
+        backgroundColor: "#DFE0E2",
         borderColor: "black"
 
     }
