@@ -1,17 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
+import {Header} from "./components/Header";
 import {DisplayPoem} from "./components/DisplayPoem";
 import {DisplayImage} from "./components/DisplayImage";
 import {DisplayAudio} from "./components/DisplayAudio";
 import {SaveFavorite} from "./components/SaveFavorite";
+import ThemeContext, {themes} from"./contexts/ThemeContext";
 
 function App() {
+
+    const [theme, setTheme] = useState(themes.darkMode);
+
+
+    const toggleTheme = () =>
+        theme ===themes.darkMode ?
+            (setTheme(themes.lightMode), document.body.style.backgroundColor = '#DFE0E2')
+            :(setTheme(themes.darkMode), document.body.style.backgroundColor = 'black');
+
+
   return (
-    <div id="utstilling" >
-      <h1> Interaktiv Utstilling - gruppe 40</h1>
+    <div className="wrapper" >
+    <ThemeContext.Provider value={theme}>
+      <div className="item_header"><Header/></div>
+      <div className="item_themeButton"><button onClick={toggleTheme}>dark/light</button></div>
       <DisplayAudio/>
-      <DisplayImage/>
-      <DisplayPoem/>
+        <DisplayImage/>
+      <div className="item_poem"><DisplayPoem/></div>
+    </ThemeContext.Provider>
     </div>
   );
 }

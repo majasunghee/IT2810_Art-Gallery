@@ -1,8 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import './components.css'
 import {useLocalStorage} from "../hooks/useLocalStorage"
+import ThemeContext from "../contexts/ThemeContext";
 
 function DisplayPoem() {
+
+  const theme = useContext(ThemeContext);
+
   const [listState, setListState] = useState()
   const [poem, getPoem] = useLocalStorage("poem", null)
 
@@ -16,13 +20,16 @@ function DisplayPoem() {
    )
 
    const handleClick = () => {
-       const randomNumb = Math.floor(Math.random()*listState.length)
-       getPoem(listState[randomNumb]);
+       try {
+           const randomNumb = Math.floor(Math.random() * listState.length)
+           getPoem(listState[randomNumb]);
+       }catch (err) {
+           console.error(err);
+       }
      }
 
   return (
-    <div>
-      <button onClick = {handleClick} > generate poem </button>
+    <div style={theme}>
     { !poem ?
       ( <div> loading... </div> ) :
       (
@@ -34,6 +41,7 @@ function DisplayPoem() {
 
         </div>
       )}
+      <button onClick = {handleClick} > generate poem </button>
     </div>
 )
 }
