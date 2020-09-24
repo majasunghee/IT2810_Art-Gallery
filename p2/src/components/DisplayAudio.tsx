@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import './components.css'
-import {useLocalStorage} from "../hooks/useLocalStorage"
+import {useSessionStorage} from "../hooks/useSessionStorage"
 import audio1 from "../audio/Algorithms.mp3";
 import audio2 from "../audio/Aspire.mp3"
 import audio3 from "../audio/Slow_Vibing.mp3"

@@ -26,10 +26,10 @@
 
 
      @keyframes starColor {
-       0%,20% {fill: #F1F603}
-       21%, 50% {fill: #FEFBB3}
-       51%, 70% {fill: white}
-       71%, 100% {fill: #FEFBB3}
+       0%,20% {opacity: 100%}
+       21%, 50% {opacity: 50%}
+       51%, 70% {opacity: 100%}
+       71%, 100% {opacity: 70%}
      }
 
   </style>
