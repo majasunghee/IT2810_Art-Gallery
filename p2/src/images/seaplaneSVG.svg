@@ -3,8 +3,7 @@
 
      #seaplane{
        animation: animateY 5s infinite linear;
-       transform-origin: bottom;
-       fill: black;
+       transform-origin: right;
      }
 
       #sun2{
@@ -16,21 +15,21 @@
       }
 
 
-     @keyframes animateY {
-       0%{
-         transform: rotateY(-10deg);
-       }
-       30%{
-         transform: rotateY(20deg);
-       }
-       60%{
-         transform: rotateY(30deg);
-       }
-       100%{
-         transform: rotateY(-10deg);
-       }
-     }
-     
+      @keyframes animateY {
+              0%{
+                transform: rotateY(-10deg);
+              }
+              30%{
+                transform: rotateY(20deg);
+              }
+              60%{
+                transform: rotateY(40deg);
+              }
+              100%{
+                transform: rotateY(-10deg);
+              }
+            }
+
      @keyframes sunColor1 {
        0%,20% {fill: #F4BD6B}
        21%, 50% {fill: #FFB47E}
