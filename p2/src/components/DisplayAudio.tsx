@@ -10,11 +10,14 @@ import audio6 from "../audio/Waterfall_And_Bird.mp3"
 import ThemeContext from"../contexts/ThemeContext";
 
 function DisplayAudio(){
+
+    //sets theme = the context passed down from App.tsx
     const theme = useContext(ThemeContext);
 
+    //manage states with useState that useSessionStorage uses
     const [audio, setAudio] = useSessionStorage("audio", null);
-    console.log(audio)
 
+    //changes the state to the selected option
     const handleChange = (e: any) => {
        setAudio(e.target.value)
    }
