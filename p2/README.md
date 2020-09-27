@@ -29,7 +29,7 @@ In this project, we have mainly made use of functional components with React hoo
 We have made 6 separate folders to structure and encapsulate the different files used.
 
 *  **tests:** a folder containing all our test-files
-*  **audio:** a folder containing all mp3 files 
+*  **audio:** a folder containing all mp3 files
 *  **components:** a folder containing all the functional components as well as the styling for the components
 *  **contexts:** a folder containing the context used. Even though we only defined one context, we figured it would be nice to have a separate folder for it in case we want to implement new contexts later
 *  **hooks:** a folder containing the storage components
@@ -113,3 +113,11 @@ This was done to avoid merging faulty code and thus improve code quality.
 It also made sure the other team member could get acquainted with the technologies used.
 
 Because we know it can be very hard to familiarize yourself with someone else's code, we tried giving variables and functions logical names and inserted comments briefly explaining what they do.
+
+### Useful Sources
+*  Stackoverflow
+*  https://www.pluralsight.com/guides/fetching-data-updating-state-hooks
+*  https://www.youtube.com/watch?v=QBfh7D8URnc&ab_channel=FrontendTopics
+*  https://grischuk.de/write-custom-react-hook-to-change-background-color-of-the-page
+*  https://jestjs.io/docs/en/snapshot-testing
+*  https://freemusicarchive.org/genre/Soundtrack
