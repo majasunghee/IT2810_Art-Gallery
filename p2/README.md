@@ -52,6 +52,10 @@ Finally, style={theme} is inserted in the return div of each component.
 
 ### AJAX
 We have implemented AJAX to retrieve text from PoetryDB's API using the fetch() API.
+The fetch() call is run inside an useEffect() function which is set to render only once.
+Fetch takes the path to PoetryDB's API as argument and returns a promise containing a response object.
+In our case the response object is a list with all poems with linecount less than 10.
+This list of poems is set to ListState with the setListState method.
 
 
 ### Responsive Web Design
