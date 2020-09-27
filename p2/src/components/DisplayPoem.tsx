@@ -19,7 +19,7 @@ function DisplayPoem() {
      .then((data: any) =>{
         setListState(data);
      })
-   }, [listState]
+   }, []
    )
 
    const saveFavorite = () => {
@@ -54,15 +54,14 @@ function DisplayPoem() {
      }
 
      const favoriteBtn = () => {
-      favClicked==false  ? saveFavorite()  : showFavorite();
+      favClicked===false  ? saveFavorite()  : showFavorite();
      }
 
   return (
-    <div>
-      <button onClick={favoriteBtn}> { favClicked==false ? "save favorite"  : "show favorite"} </button>
-      <button onClick = {handleClick} > generate poem </button>
+    <div style={theme}>
+      <button className="favButton" onClick={favoriteBtn}> { favClicked===false ? "save poem"  : "show poem"} </button>
     { !poem ?
-      ( <div> loading... </div> ) :
+      ( <div> </div> ) :
       (
         <div className="content">
         <p className="poem_title"> {poem.title} </p>

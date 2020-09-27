@@ -2,13 +2,14 @@
 
     <style>
 
-      /*animating the SVGs */
-       #cactus1, #cactus2, #cactus3 {
-         animation: animateX 15s infinite linear;
+       #cactus1, #cactus2, #cactus4 {
+         animation: animateX 5s infinite linear;
+         transform-origin: bottom;
        }
 
-       #starnight > path{
-         animation: starColor 1s step-start infinite;
+
+       #sand1{
+         animation: starColor 10s linear infinite;
        }
 
        @keyframes animateX {
@@ -16,16 +17,18 @@
            transform: rotateX(0deg);
          }
          50%{
+           transform: rotateX(28deg);
+         }
+         100%{
            transform: rotateX(10deg);
          }
        }
 
-
        @keyframes starColor {
-         0%,20% {opacity: 100%}
-         21%, 50% {opacity: 50%}
-         51%, 70% {opacity: 100%}
-         71%, 100% {opacity: 70%}
+         0%,20% {fill: #E0605A}
+         21%, 50% {fill: #ec9f9c}
+         51%, 70% {fill: #E0605A}
+         71%, 100% {fill: #e67f7a}
        }
 
     </style>
@@ -35,8 +38,8 @@
         <rect id="backGround" y="-3" width="1441" height="1025" fill="#7D87D9"/>
 
         <g id="sand">
-            <path id="Vector 28" d="M1440 501.145V636H0V440.5C142.5 422.471 340.547 413.792 360.99 422.471C360.99 422.471 841.037 512.868 879.768 512.868C918.5 512.868 1039.46 497.899 1112.5 501.145C1186.85 504.45 1245.05 461.021 1319 472.051C1372.18 479.982 1412.03 518.653 1440 501.145Z" fill="url(#paint0_linear)"/>
-            <path id="Vector 24" d="M1441 587.683V1024H0V516.619C304.878 529.074 614.566 463.13 750.302 465.041C886.037 466.951 1210.09 589.468 1441 587.683Z" fill="url(#paint1_linear)"/>
+            <path id="sand1" d="M1440 501.145V636H0V440.5C142.5 422.471 340.547 413.792 360.99 422.471C360.99 422.471 841.037 512.868 879.768 512.868C918.5 512.868 1039.46 497.899 1112.5 501.145C1186.85 504.45 1245.05 461.021 1319 472.051C1372.18 479.982 1412.03 518.653 1440 501.145Z" fill="url(#paint0_linear)"/>
+            <path id="Vector24" d="M1441 587.683V1024H0V516.619C304.878 529.074 614.566 463.13 750.302 465.041C886.037 466.951 1210.09 589.468 1441 587.683Z" fill="url(#paint1_linear)"/>
         </g>
 
         <g id="cactus3">
