@@ -67,7 +67,6 @@ Even if the device the user is viewing the web site on is a smaller computer, ta
 In order to make this possible we have (in addition to the default CSS) used media queries to alter the content of the web site so that some of the styling changes when the screen is within the width defined in the media query.
 We have defined two media queries: one for when the screen is about the size of an iphone 6/7/8plus, and one for when the screen is about the size of an ipad pro.
 If the screen is bigger than an ipad pro, the default CSS will be used.
-We made use of google's device toolbar, which let the user preview the web site in different formats, when changing the layout to fit the different screen sizes.
 
 We have not used viewport in our web design. 
 This is because we do not believe it is neccessary to implement support for screens that are smaller and narrower than the ones defined in our media queries.
@@ -92,8 +91,11 @@ We chose to use our time to polish other things, as testing is not a main priori
 In addition, we have a lot of components where testing with Jest does not make much sense.
 It would make much more sense to implement more tests i.e., if we were to check if something is expected to be true or equal.
 
+We made use of google's device toolbar, which let the user preview the web site in different formats, when changing the layout to fit the different screen sizes.
 When you view the web site on a computer with a screen that is bigger than 13 inches, you will be able to see all the elements of the web site at once.
 If the screen is a bit smaller, the poem will be moved underneath the image. If the screen is the size of a mobile screen, the clickable elements will be placed on top, followed by the image underneath, and the poem at the bottom.
+We tested the web site on responsinator.com, which displayed our web site on 10 different devices.
+On three of the screen sizes we tested - 15.6 inch computer, 11 inch tablet, and 4.7 inch phone - the layout was as corrct, and all the web sites functions were present.
 
 ### Git and Coding
 Git has been used in the developing process of this project.
