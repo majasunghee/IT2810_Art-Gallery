@@ -6,6 +6,7 @@ import ThemeContext from "../contexts/ThemeContext";
 
 function DisplayPoem() {
 
+  //sets theme = the context which is passed down from App.tsx
   const theme = useContext(ThemeContext);
 
   const [listState, setListState] = useState()
@@ -13,23 +14,26 @@ function DisplayPoem() {
   const [favorite, setFavorite] = useLocalStorage("favorite", "false")
   const [favClicked, isClicked] = useLocalStorage("favPoem", false)
 
+   //Function which fetches data from PoetryDB's api and stores the data in ListState
   useEffect( () => {
     fetch('https://poetrydb.org/linecount/10')
      .then(res => res.json())
      .then((data: any) =>{
         setListState(data);
+        return data;
      })
    }, []
    )
 
+   //gets the current state of poem from session storage to update the state
+    // with setFavorite, which saves it to local storage
    const saveFavorite = () => {
        setFavorite(sessionStorage.getItem("poem"));
        isClicked(true);
-       console.log("fave poem has been saved");
-       console.log(favClicked);
      }
 
-  function getLocalImage() {
+   //returns the items stored in local storage if local storage is not empty
+  function getLocalPoem() {
     if(localStorage.getItem("favorite")!==null){
     let obj = localStorage.getItem("favorite");
      const parsedObj = JSON.parse(obj!);
@@ -37,14 +41,14 @@ function DisplayPoem() {
     }
    }
 
+   // parses the object returned from getLocalPoem() and updates the state of poem
     const showFavorite = () => {
-      let obj = JSON.parse(getLocalImage());
+      let obj = JSON.parse(getLocalPoem());
       isClicked(false);
       getPoem(obj);
-      console.log(favClicked);
-      console.log("is my favorite");
      }
 
+     //when the button is clicked it updates the poem state with a random poem
    const handleClick = () => {
        try {const randomNumb = Math.floor(Math.random()*listState.length)
        getPoem(listState[randomNumb]);
@@ -53,6 +57,7 @@ function DisplayPoem() {
      }
      }
 
+     //toggles between saving and showing a saved poem
      const favoriteBtn = () => {
       favClicked===false  ? saveFavorite()  : showFavorite();
      }

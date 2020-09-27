@@ -3,7 +3,7 @@ import React, {createContext, useState} from 'react';
 
 var bodyColor = document.body.style.backgroundColor;
 
-
+//Made two different themes which uses a different color scheme
 export const themes = {
 
     darkMode: {
@@ -19,6 +19,8 @@ export const themes = {
 
     }
 };
+
+//Creates context and sets darkMode as default theme
 const ThemeContext = React.createContext(themes.darkMode);
 
 

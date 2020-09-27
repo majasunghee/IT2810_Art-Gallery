@@ -8,9 +8,10 @@ import ThemeContext, {themes} from"./contexts/ThemeContext";
 
 function App() {
 
+  //Using useState to set the state of the current theme. Default theme is darkMode
     const [theme, setTheme] = useState(themes.darkMode);
 
-
+  //function which changes the theme from darkmode to lightmode and vice versa in all components with the implementation of context api
     const toggleTheme = () =>
         theme ===themes.darkMode ?
             (setTheme(themes.lightMode), document.body.style.backgroundColor = '#DFE0E2')
