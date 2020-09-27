@@ -101,7 +101,7 @@ h1{
 }
 
 button{
-  width: 6em;
+  min-width: 6em;
   height: 2em;
   font-size: 24px;
   font-family: courier;
@@ -109,6 +109,7 @@ button{
   font-variant: small-caps;
   padding: 5px;
   border: solid 2px #F4F5F7;
+  border-radius: 5px;
   text-align: center;
   color: #F4F5F7;
   background: black;
@@ -120,6 +121,10 @@ button:hover{
   border: solid 2px #F4F5F7;
   background: #F4F5F7;
   color: black;
+}
+
+.favButton:enabled {
+  background: #CC0000;
 }
 
 /*Based on the size of an ipad pro*/
@@ -199,7 +204,6 @@ button:hover{
   }
 
   button{
-    width: 6em;
     padding: 2px;
     font-size: 12px;
     box-shadow: none;
