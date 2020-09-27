@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when there are no items 1`] = `
+Array [
+  <div
+    className="item_audioSelect"
+    style={
+      Object {
+        "backgroundColor": "black",
+        "borderColor": "white",
+        "color": "white",
+      }
+    }
+  >
+    <select
+      className="drop_down"
+      onChange={[Function]}
+    >
+      <option>
+        sounds
+      </option>
+      <option
+        value="Algorithms.mp3"
+      >
+         space 
+      </option>
+      <option
+        value="Aspire.mp3"
+      >
+         reminisce 
+      </option>
+      <option
+        value="Slow_Vibing.mp3"
+      >
+         lofi 
+      </option>
+      <option
+        value="The_Space_Inside.mp3"
+      >
+         lightsaber 
+      </option>
+      <option
+        value="Videogame_Theme.mp3"
+      >
+         videogame 
+      </option>
+      <option
+        value="Waterfall_And_Bird.mp3"
+      >
+         waterfall 
+      </option>
+    </select>
+  </div>,
+  <div
+    className="item_audio"
+  >
+    <audio
+      autoPlay={true}
+      controls={true}
+      loop={true}
+      src={null}
+    />
+  </div>,
+]
+`;
