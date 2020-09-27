@@ -1,3 +1,4 @@
+/*Default CSS*/
 body {
   background-color: black;
   align-items: center;
@@ -11,6 +12,9 @@ h1{
   text-align: center;
 }
 
+/*We have a wrapper which is a div wrapped around all the components being exported from App.tsx
+ This is where we define our grid template, which will be used to position the rest of our elements
+ We define the grid template in fractions*/
 .wrapper {
   margin: 10px;
   padding: 10px;
@@ -80,13 +84,13 @@ h1{
   text-align: right;
 }
 
-
 #image_container{
   display: block;
   margin: 0px auto;
   width: 90%;
 }
 
+/*Styling for select and options elements*/
 .drop_down, .drop_down > option {
   border: solid 2px;
   background-color: black;
@@ -127,7 +131,7 @@ button:hover{
   background: #CC0000;
 }
 
-/*Based on the size of an ipad pro*/
+/*Default CSS when the screen is on the size of an ipad pro*/
 @media only screen and (max-width: 1024px) and (min-width: 750px) {
 
   h1 {
@@ -153,7 +157,7 @@ button:hover{
 
 }
 
-/*Based on the size of an iphone 6/7/8 Plus*/
+/*Default CSS when the screen is the size of an iphone 6/7/8 Plus*/
 @media only screen and (max-width: 750px) {
 
   .wrapper {
