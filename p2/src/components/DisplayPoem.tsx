@@ -10,8 +10,8 @@ function DisplayPoem() {
 
   const [listState, setListState] = useState()
   const [poem, getPoem] = useSessionStorage("poem", null)
-  const [favorite, setFavorite] = useLocalStorage("favorite", "false");
-  const [favClicked, isClicked] = useState(false)
+  const [favorite, setFavorite] = useLocalStorage("favorite", "false")
+  const [favClicked, isClicked] = useLocalStorage("favPoem", false)
 
   useEffect( () => {
     fetch('https://poetrydb.org/linecount/10')
